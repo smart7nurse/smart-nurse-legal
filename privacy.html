@@ -11,21 +11,29 @@
   h3 { color: #1565C0; }
   .updated { color: #78909C; font-size: 0.9em; }
   .warning { background: #FFF8E1; border-left: 4px solid #FFB300; padding: 12px 16px; border-radius: 4px; margin: 16px 0; }
+  .health-notice { background: #E8F5E9; border-left: 4px solid #4CAF50; padding: 12px 16px; border-radius: 4px; margin: 16px 0; }
   ul { padding-left: 20px; }
   li { margin-bottom: 6px; }
   a { color: #1565C0; }
   footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #E0E0E0; color: #78909C; font-size: 0.9em; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+  th { background: #E3F2FD; color: #0D3B8C; padding: 10px; text-align: left; border: 1px solid #BBDEFB; }
+  td { padding: 10px; border: 1px solid #E0E0E0; vertical-align: top; }
 </style>
 </head>
 <body>
 
 <h1>Privacy Policy — Smart Nurse</h1>
-<p class="updated">Last updated: July 22, 2026</p>
+<p class="updated">Last updated: September 13, 2026</p>
 
 <p>Smart Nurse ("we", "our", "the app") is a clinical reference and professional-development app for nurses and healthcare professionals in the Gulf region. This Privacy Policy explains what information the app collects, how it is used, and your choices.</p>
 
 <div class="warning">
   ⚠️ <strong>Clinical Disclaimer:</strong> All clinical tools in this app (ECG analysis, ventilator assistant, calculators, protocols) are for <strong>educational and reference purposes only</strong>. They do not replace clinical judgment or professional diagnosis. Do not enter real patient names or identifiable patient information into any field.
+</div>
+
+<div class="health-notice">
+  🏥 <strong>Health Information Notice:</strong> Smart Nurse does not collect or store protected health information (PHI). All clinical tools (calculators, protocols, sedation assistant, ICU rounds) are for educational and professional reference only. Users must not enter real patient names, medical record numbers, or any identifiable patient information into the application.
 </div>
 
 <h2>1. Information We Collect</h2>
@@ -46,21 +54,72 @@
 <p>If you choose to submit a salary entry to the community database, we collect: hospital name, country, position, salary amount, currency, year, years of experience, nationality, and allowance information. This data is stored in Cloud Firestore and is visible to other app users as anonymous community data.</p>
 
 <h3>Usage and Analytics Data</h3>
-<p>We use Firebase Analytics to understand which features are used and how often, so we can improve the app. We also track in-app search queries to improve search results. This data is aggregated.</p>
+<p>We use Firebase Analytics to understand which features are used and how often, so we can improve the app. We also track in-app search queries to improve search results. This data is aggregated and anonymized — it cannot be used to identify you individually.</p>
 
 <h3>Crash and Diagnostic Data</h3>
-<p>We use Firebase Crashlytics to automatically receive technical reports if the app crashes. These reports may include device model, OS version, and app state at the time of the crash.</p>
+<p>We use Firebase Crashlytics to automatically receive technical reports if the app crashes. These reports may include device model, OS version, and app state at the time of the crash. This data is anonymized and not linked to your personal identity.</p>
 
 <h3>Device Identifiers and Advertising ID</h3>
-<p>The app displays banner advertisements powered by Google AdMob. AdMob may collect your device's Advertising ID to show relevant ads. This identifier is shared with Google's advertising network. You can reset or limit your Advertising ID in your device settings.</p>
+<p>The app displays advertisements powered by Google AdMob. AdMob may collect your device's Advertising ID to show relevant ads. This identifier is shared with Google's advertising network. You can reset or limit your Advertising ID in your device settings.</p>
+
+<p><strong>iOS Users — App Tracking Transparency:</strong> On iOS devices, the app will request your permission before accessing your device's Advertising Identifier (IDFA), in accordance with Apple's App Tracking Transparency (ATT) framework. You may deny this permission and the app will continue to function normally, though ads may be less relevant to you.</p>
 
 <h3>Push Notification Token</h3>
 <p>If you allow notifications, a device token is generated via Firebase Cloud Messaging so we can send you reminders (e.g. license expiry alerts, shift reminders). This token is not linked to your personal identity.</p>
 
 <h3>Information You Enter</h3>
-<p>This includes professional details (name, department, years of experience, certifications, salary goals) and values you enter into clinical tools (calculators, care plan builder, sedation assistant, wellbeing tracker). These are stored locally on your device using secure local storage.</p>
+<p>This includes professional details (name, department, years of experience, certifications, salary goals) and values you enter into clinical tools (calculators, care plan builder, sedation assistant, wellbeing tracker). These are stored locally on your device using secure local storage and are not transmitted to our servers.</p>
 
-<h2>2. Third-Party Services and AI</h2>
+<h2>2. Data Types Summary</h2>
+<table>
+  <tr>
+    <th>Data Type</th>
+    <th>Purpose</th>
+    <th>Linked to Identity?</th>
+  </tr>
+  <tr>
+    <td>Name &amp; Email</td>
+    <td>Account creation (optional)</td>
+    <td>Yes</td>
+  </tr>
+  <tr>
+    <td>Photos</td>
+    <td>ECG Scanner, CV Builder</td>
+    <td>No</td>
+  </tr>
+  <tr>
+    <td>Audio (text only)</td>
+    <td>Interview Academy</td>
+    <td>No</td>
+  </tr>
+  <tr>
+    <td>Device Advertising ID</td>
+    <td>AdMob advertising</td>
+    <td>No</td>
+  </tr>
+  <tr>
+    <td>Usage Data</td>
+    <td>Firebase Analytics (aggregated)</td>
+    <td>No</td>
+  </tr>
+  <tr>
+    <td>Crash Data</td>
+    <td>Firebase Crashlytics</td>
+    <td>No</td>
+  </tr>
+  <tr>
+    <td>Salary submissions</td>
+    <td>Community database (voluntary)</td>
+    <td>No</td>
+  </tr>
+  <tr>
+    <td>Clinical tool inputs</td>
+    <td>Stored locally on device only</td>
+    <td>No</td>
+  </tr>
+</table>
+
+<h2>3. Third-Party Services and AI</h2>
 
 <h3>Google Gemini AI</h3>
 <p>Several features send data to Google Gemini AI for processing, including:</p>
@@ -76,14 +135,14 @@
 <ul>
   <li><strong>Firebase Authentication</strong> — manages anonymous and email-based accounts</li>
   <li><strong>Cloud Firestore</strong> — stores community salary data; personal data access is restricted to your own account</li>
-  <li><strong>Firebase Analytics</strong> — aggregated usage statistics</li>
-  <li><strong>Firebase Crashlytics</strong> — crash reporting</li>
+  <li><strong>Firebase Analytics</strong> — aggregated, anonymized usage statistics</li>
+  <li><strong>Firebase Crashlytics</strong> — anonymized crash reporting</li>
   <li><strong>Firebase Cloud Messaging</strong> — push notifications</li>
   <li><strong>Firebase App Check</strong> — protects against abuse</li>
 </ul>
 
 <h3>Google AdMob</h3>
-<p>The app displays banner advertisements. AdMob may use your Advertising ID to serve relevant ads. See <a href="https://policies.google.com/technologies/ads" target="_blank">Google Ads Privacy</a>.</p>
+<p>The app displays advertisements. AdMob may use your Advertising ID to serve relevant ads. On iOS, this requires your explicit permission via App Tracking Transparency. See <a href="https://policies.google.com/technologies/ads" target="_blank">Google Ads Privacy</a>.</p>
 
 <h3>RapidAPI / Job Search</h3>
 <p>The job search feature uses the JSearch API via RapidAPI to retrieve job listings. Your search query and country preference are sent to this service. No personal account information is sent.</p>
@@ -91,50 +150,56 @@
 <h3>Open-Meteo</h3>
 <p>The weather widget uses the free Open-Meteo API with fixed coordinates for Dammam, Saudi Arabia. No personal location data is sent.</p>
 
-<h2>3. How We Use Information</h2>
+<h2>4. How We Use Information</h2>
 <ul>
   <li>To provide and maintain the app's features</li>
   <li>To keep your saved data available across sessions</li>
   <li>To send notifications you have opted into</li>
   <li>To understand usage patterns and fix technical problems</li>
-  <li>To display relevant advertisements</li>
+  <li>To display advertisements that support the free version of the app</li>
   <li>To protect the app and its backend from abuse</li>
 </ul>
 
-<h2>4. Data Sharing</h2>
+<h2>5. Data Sharing</h2>
 <p>We do not sell your personal data. Data may be shared with:</p>
 <ul>
   <li><strong>Google</strong> — Firebase services, AdMob advertising, Gemini AI processing</li>
   <li><strong>RapidAPI</strong> — job search queries only</li>
   <li><strong>Other app users</strong> — salary submissions you voluntarily submit to the community database</li>
 </ul>
+<p>We do not share your data with any other third parties.</p>
 
-<h2>5. Data Storage and Security</h2>
+<h2>6. Data Storage and Security</h2>
 <p>Most preferences and logs are stored locally on your device. Account-linked data in Cloud Firestore is protected by security rules restricting access to your own authenticated account. All data transmission uses HTTPS encryption. No method of transmission or storage is 100% secure, but we take reasonable steps to protect your information.</p>
 
-<h2>6. Data Retention and Deletion</h2>
-<p>You may request deletion of your account and associated data at any time using the link below or by contacting us. Uninstalling the app removes locally stored data from your device.</p>
+<h2>7. Data Retention and Deletion</h2>
+<p>You may request deletion of your account and associated data at any time using the link below or by contacting us. We will respond to your request within 30 days. Uninstalling the app removes locally stored data from your device.</p>
 <p>
   <a href="https://smart7nurse.github.io/smart-nurse-legal/data_deletion.html">→ Request Account or Data Deletion</a>
 </p>
 
-<h2>7. Children's Privacy</h2>
-<p>Smart Nurse is a professional tool intended for nurses, nursing students, and healthcare professionals. It is not directed at children under 13, and we do not knowingly collect information from children.</p>
+<h2>8. Children's Privacy</h2>
+<p>Smart Nurse is a professional tool intended for nurses, nursing students, and healthcare professionals. It is not directed at children under 13 (or under 16 in the EU), and we do not knowingly collect information from children. If you believe a child has provided us with personal information, please contact us immediately.</p>
 
-<h2>8. Your Choices</h2>
+<h2>9. Your Choices</h2>
 <ul>
   <li>You can use most features anonymously without providing an email</li>
   <li>You can disable notifications in your device settings at any time</li>
-  <li>You can reset or limit your Advertising ID in Android Settings → Privacy → Ads</li>
+  <li><strong>Android:</strong> You can reset or limit your Advertising ID in Settings → Privacy → Ads</li>
+  <li><strong>iOS:</strong> You can withdraw tracking permission in Settings → Privacy &amp; Security → Tracking</li>
   <li>You can request a copy or deletion of your data by contacting us</li>
 </ul>
 
-<h2>9. Changes to This Policy</h2>
-<p>We may update this Privacy Policy from time to time. Material changes will be reflected by updating the "Last updated" date above.</p>
+<h2>10. International Users</h2>
+<p>Smart Nurse is primarily designed for healthcare professionals in the Gulf region (Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, Oman) and Egypt. Data may be processed on servers located in the United States and European Union via Google Firebase services.</p>
+
+<h2>11. Changes to This Policy</h2>
+<p>We may update this Privacy Policy from time to time. Material changes will be reflected by updating the "Last updated" date above. We encourage you to review this policy periodically.</p>
 
 <footer>
   <p><strong>Contact us:</strong><br>
   Email: <a href="mailto:smart7nurse@gmail.com">smart7nurse@gmail.com</a><br>
+  Response time: within 30 days<br>
   App: Smart Nurse — NurseJobs Gulf<br>
   Developer: smart7nurse</p>
   <p><a href="https://smart7nurse.github.io/smart-nurse-legal/data_deletion.html">Data Deletion Request</a> |
